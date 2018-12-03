@@ -20,6 +20,9 @@ app.use(methodOverride((req,res)=>{
 const baseRouter = require("./routes/base");
 app.use("/", baseRouter);
 
+const cluckRouter = require("./routes/clucks");
+app.use("/", cluckRouter);
+
 // SERVER
 const PORT = 5215;
 const HOST = 'localhost';

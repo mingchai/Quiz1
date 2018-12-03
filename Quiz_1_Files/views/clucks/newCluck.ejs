@@ -1,0 +1,14 @@
+<%- include("../partials/header") %>
+<h1>Create new cluck here!</h1>
+<form action="/cluck" method="POST">
+    <div>
+        <p>Content</p>
+        <textarea name="content" id="" cols="30" rows="10"></textarea>
+        <br>
+        <p>Image URL</p>
+        <input type="text" name="image">
+        <br>
+        <input type="submit" value="Cluck!">
+    </div>
+</form>
+<%- include("../partials/footer") %>

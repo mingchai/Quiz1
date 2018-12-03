@@ -1,0 +1,10 @@
+<%- include("../partials/header") %>
+<h1>Welcome to the cluck Index!</h1>
+<% noteDataArr.forEach(noteItem => { %>
+<div>
+<%= noteItem.content %>
+<br>
+<img src="<%= noteItem.image_url %>" alt="">
+</div>
+<% }) %>
+<%- include("../partials/footer") %>
