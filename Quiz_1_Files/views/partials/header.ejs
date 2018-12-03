@@ -21,9 +21,12 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group mr-2" role="group" aria-label="First group">
         <form class="form-inline my-2 my-lg-0" action="/cluck" method="GET">
             <button class="btn btn-warning my-2 my-sm-0" type="submit">Cluck!</button>
         </form>
+        </div>
       </li>
 
       <% if (username) { %>
@@ -34,8 +37,7 @@
           <button class="btn btn-warning" type="submit">Sign Out</button>
         </form>
       <% } else { %>
-        <form action="/sign_in" method="POST" class="form-inline">
-          <input class="form-control mr-2" name="username" placeholder="Username">
+        <form action="/sign_in" method="GET" class="form-inline">
           <button class="btn btn-warning" type="submit">Sign In</button>
         </form>
       <% } %>

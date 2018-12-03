@@ -1,25 +1,24 @@
 <%- include("../partials/header") %>
-<h1>Welcome to the cluck Index!</h1>
+<h1 class="m-3">Overheard at the Henhouse...</h1>
 <% noteDataArr.forEach(noteItem => { %>
 
-<div class="card m-4">
-    <div class="container">
-        <div class="card-body">
-        <p class="card-text"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Chicken_icon_05.svg" height = "30" width= "30" alt=""></p>
-            
-            <div class="">
-                <%= noteItem.content %>
-                <br>
-                <%if(noteItem.image_url) { %>
-                
-                <img src="<%= noteItem.image_url %>" alt="" height="120" width = "200">
-                <% } %>
+<div class="card m-3">
+    <div class="media">
+    <img src="https://images.pexels.com/photos/4196/animal-agriculture-farm-chicken.jpg?cs=srgb&dl=agriculture-animal-chicken-4196.jpg&fm=jpg" height = "30" width= "30" alt="" class="m-2 rounded">
+    <div class="media-body m-2">
+        <%= noteItem.content %>
+        <br>
+        <%if(noteItem.image_url) { %>
+                        
+            <a href="<%= noteItem.image_url %>">
+            <img src="<%= noteItem.image_url %>" alt="broken link" height= "90%" width="100%">
+            </a>
 
-            </div>
-        </div>
+        <% } %>
     </div>
-  
+    </div>
 </div>
+
 
 <% }) %>
 <%- include("../partials/footer") %>
