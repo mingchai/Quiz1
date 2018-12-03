@@ -1,0 +1,31 @@
+{
+  "name": "quiz_1",
+  "version": "0.0.1",
+  "description": "Quiz 1 - Twitter Clone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingchai/Quiz1.git"
+  },
+  "author": "Ming Chai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mingchai/Quiz1/issues"
+  },
+  "homepage": "https://github.com/mingchai/Quiz1#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "knex": "^0.15.2",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}
