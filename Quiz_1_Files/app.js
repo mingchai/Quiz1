@@ -9,6 +9,17 @@ app.use(logger("dev"));
 app.set("view engine", "ejs");
 app.use(cookieParser());
 app.use(express.urlencoded({extended: false}));
+// CUSTOM MIDDLEWARE TO USE USERNAME
+app.use((req,res, next)=>{
+    const username = req.cookies.username;
+    
+    res.locals.username = "";
+    if(username){
+        res.locals.username = username;
+        console.log(`${username} has signed in`);
+    }
+    next();
+})
 app.use(methodOverride((req,res)=>{
     if(req.body && req.body._method){
         const method = req.body._method;

@@ -1,4 +1,5 @@
 <%- include("../partials/header") %>
+<% if(username) {%>
 <h1>Create new cluck here!</h1>
 <form action="/cluck" method="POST">
     <div>
@@ -11,4 +12,11 @@
         <input type="submit" value="Cluck!">
     </div>
 </form>
+<% } else{ %>
+
+<h3>Please Sign In to Start Clucking!</h3>
+
+<a href="/sign_in">Sign in Now!</a>
+
+<% } %>
 <%- include("../partials/footer") %>

@@ -14,6 +14,14 @@
             <a href="/cluck">Cluck!</a>
 
             <a href="/index">Index</a>
+           <% if (username) { %>
+            <%= username %>
+            <form action="/"></form>
+        <% } else { %>
+        <form action="/sign_in" method="GET">
+                <button type="submit">Sign In</button>
+                <% } %>
+        </form>
         </nav>
     </header>
     
