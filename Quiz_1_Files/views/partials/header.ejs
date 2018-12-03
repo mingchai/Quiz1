@@ -4,24 +4,45 @@
         <title>Cluckr 🐔</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+        <script src="/scripts/jquery-3.3.1.slim.min.js"></script>
+        <script src="/scripts/popper.min.js"></script>
+        <script src="/scripts/bootstrap.min.js"></script>
     </head>
     <body>
     <header>
-        <nav>
-            <a href="/">Home</a>
+    <nav class="navbar navbar-expand navbar-dark bg-danger">
+    <a class="navbar-brand" href="/index"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Chicken_icon_05.svg" alt="Index" width="30" height="30"></a>
 
-            <a href="/cluck">Cluck!</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-            <a href="/index">Index</a>
-           <% if (username) { %>
-            <%= username %>
-            <form action="/"></form>
-        <% } else { %>
-        <form action="/sign_in" method="GET">
-                <button type="submit">Sign In</button>
-                <% } %>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <form class="form-inline my-2 my-lg-0" action="/cluck" method="GET">
+            <button class="btn btn-warning my-2 my-sm-0" type="submit">Cluck!</button>
         </form>
-        </nav>
+      </li>
+
+      <% if (username) { %>
+        <span class="navbar-text text-light mr-2">
+         Hi, 🍗 <%= username %>!
+        </span>
+        <form action="/sign_out" method="POST" class="form-inline">
+          <button class="btn btn-warning" type="submit">Sign Out</button>
+        </form>
+      <% } else { %>
+        <form action="/sign_in" method="POST" class="form-inline">
+          <input class="form-control mr-2" name="username" placeholder="Username">
+          <button class="btn btn-warning" type="submit">Sign In</button>
+        </form>
+      <% } %>
+    </ul>
+  </div>
+
+</nav>
     </header>
+
     

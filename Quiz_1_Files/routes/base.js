@@ -16,4 +16,10 @@ router.post("/sign_in", (req, res) =>{
     res.redirect("/index");
 })
 
+router.post("/sign_out", (req, res) =>{
+    const username = req.body.username;
+    res.clearCookie("username", username);
+    res.redirect("/index");
+})
+
 module.exports = router;

@@ -1,9 +1,16 @@
 <%- include("./partials/header") %>
-<h1>Welcome to the Henhouse!</h1>
-<p>Username</p>
+
 <form action="/sign_in" method="POST">
-    <input type="text" name="username">
-    <br>
-    <input type="submit" value="Sign In">
+  <div class="card">
+    <div class="card-body">
+    <h5 class="card-title">Username</h5>
+    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g. Cluckmeister">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    
+    <button type="submit" class="btn btn-primary align-content-end">Sign In</button>
+    </div>
+  </div>
+  
+  
 </form>
 <%- include("./partials/footer") %>
