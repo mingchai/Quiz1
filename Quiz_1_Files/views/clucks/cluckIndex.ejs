@@ -4,8 +4,11 @@
 
 <div class="card m-3">
     <div class="media">
-    <img src="https://images.pexels.com/photos/4196/animal-agriculture-farm-chicken.jpg?cs=srgb&dl=agriculture-animal-chicken-4196.jpg&fm=jpg" height = "30" width= "30" alt="" class="m-2 rounded">
+    <img src="./images/defaultAvatar.jpg" height = "30" width= "30" alt="" class="m-2 rounded">
     <div class="media-body m-2">
+
+        <strong> <%= noteItem.username%> </strong>
+        <br>
         <%= noteItem.content %>
         <br>
         <%if(noteItem.image_url) { %>

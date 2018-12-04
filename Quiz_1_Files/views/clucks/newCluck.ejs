@@ -4,20 +4,23 @@
 
 <form action="/cluck" method="POST">
   <div class="form-group m-2">
-    <label for="exampleFormControlInput1">Content</label>
+    <label>Content</label>
     <textarea name="content" id="" rows="10" class="form-control" placeholder="ex) Buck buck"></textarea>
   </div>
   <div class="form-group m-2">
-    <label for="exampleFormControlInput1">Image URL</label>
+    <label>Image URL</label>
     <input type="text" class="form-control" name="image" placeholder=" ex) http://example.com">
     <br>
     <div class="justify-content-end">
-        <input class="btn btn-success"type="submit" value="Cluck!">
+        <input class="btn btn-warning"type="submit" value="Cluck!">
     </div>
   </div>
 </form>
-<% } else{ %>
-
+<% } else { %>
+<!-- using a fixed top bar, had to add more spaces -->
+<br>
+<br>
+<br>
 <h3>Please Sign In to Start Clucking!</h3>
 
 <% } %>

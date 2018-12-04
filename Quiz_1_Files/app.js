@@ -7,6 +7,7 @@ const app = express();
 
 app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, "public")));
+// app.use("/css", express.static(path.join(__dirname, "bootstrap-4.1.3/dist/css"))); // was going to install bootstrap in the file, but decided against it. Currently using static versions of bootstrap scripts and css (see public folder)
 app.set("view engine", "ejs");
 app.use(cookieParser());
 app.use(express.urlencoded({extended: false}));
