@@ -1,0 +1,27 @@
+<%- include("../partials/header") %>
+<h1 class="m-3">Overheard at the Henhouse...</h1>
+<% noteDataArr.forEach(noteItem => { %>
+
+<div class="card m-3">
+    <div class="media">
+    <img src="./images/defaultAvatar.jpg" height = "30" width= "30" alt="" class="m-2 rounded">
+    <div class="media-body m-2">
+
+        <strong> <%= noteItem.username%> </strong>
+        <br>
+        <%= noteItem.content %>
+        <br>
+        <%if(noteItem.image_url) { %>
+                        
+            <a href="<%= noteItem.image_url %>">
+            <img src="<%= noteItem.image_url %>" alt="broken link" height= "90%" width="100%">
+            </a>
+
+        <% } %>
+    </div>
+    </div>
+</div>
+
+
+<% }) %>
+<%- include("../partials/footer") %>

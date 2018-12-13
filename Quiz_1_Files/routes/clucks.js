@@ -1,0 +1,35 @@
+const express = require("express");
+const router = express.Router();
+const knex = require("../db/client");
+
+// RENDER THE NEW CLUCK PAGE
+router.get("/cluck", (req,res)=>{
+    res.render("./clucks/newCluck");
+})
+
+// SUBMIT THE CLUCK TO THE DB
+router.post("/cluck", (req, res) =>{
+const content = req.body.content;
+const image_url = req.body.image;
+const username = req.cookies.username;
+
+const newCluck = {
+    content,
+    image_url,
+    username
+};
+
+knex("cluckrtable").insert(newCluck).returning('*').then( ()=>{
+    res.redirect("/index");
+    })
+});
+
+router.get("/index", (req, res)=>{
+    knex.select("*").from("cluckrtable").orderBy("createdAt", "DESC").then(noteDataArr =>{
+
+        res.render("./clucks/cluckIndex", {noteDataArr});
+    })
+    
+})
+
+module.exports = router;
